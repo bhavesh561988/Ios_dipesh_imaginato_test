@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="62H-cH-KJM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Medium.ttf">
+            <string>SFUIText-Medium</string>
+        </array>
+        <array key="SFUIText-Regular.ttf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--My Dairy-->
+        <scene sceneID="Upb-52-2O3">
+            <objects>
+                <viewController storyboardIdentifier="NotesListViewController" id="62H-cH-KJM" customClass="NotesListViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6RT-0c-8Nb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-33-Nnt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TEN-ro-L2t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kLp-33-Nnt" firstAttribute="leading" secondItem="TEN-ro-L2t" secondAttribute="leading" id="5rM-lo-fPb"/>
+                            <constraint firstItem="kLp-33-Nnt" firstAttribute="top" secondItem="TEN-ro-L2t" secondAttribute="top" id="SQI-Jb-Gm7"/>
+                            <constraint firstAttribute="bottom" secondItem="kLp-33-Nnt" secondAttribute="bottom" id="gee-vx-csv"/>
+                            <constraint firstItem="TEN-ro-L2t" firstAttribute="trailing" secondItem="kLp-33-Nnt" secondAttribute="trailing" id="xPK-zg-TE0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Dairy" id="CGg-um-8Zf"/>
+                    <connections>
+                        <outlet property="notesTableView" destination="kLp-33-Nnt" id="gST-Bs-5yJ"/>
+                        <segue destination="Dtd-Hu-fJr" kind="show" id="wMJ-ZV-2QH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7P-5J-W86" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="119"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l3a-Ks-YZl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0sa-22-fQO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jW7-1q-KVO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="62H-cH-KJM" kind="relationship" relationship="rootViewController" id="yn9-KR-8jE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="di0-Af-7OR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="118.52678571428571"/>
+        </scene>
+        <!--Edit Notes View Controller-->
+        <scene sceneID="JT4-dA-sgc">
+            <objects>
+                <viewController storyboardIdentifier="EditNotesViewController" id="Dtd-Hu-fJr" customClass="EditNotesViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ti8-BK-BJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uI-eg-xJ7">
+                                <rect key="frame" x="21" y="237.5" width="369" height="180"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="eyY-b6-6Su"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCU-T1-0eu">
+                                <rect key="frame" x="24" y="785" width="366" height="48"/>
+                                <color key="backgroundColor" red="0.2666666667" green="0.12941176469999999" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="2f0-78-ld9"/>
+                                </constraints>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="Dtd-Hu-fJr" eventType="touchUpInside" id="T8z-Ud-TGJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sW0-oC-KCd">
+                                <rect key="frame" x="24" y="112" width="326" height="14"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-Rp-Xsd">
+                                <rect key="frame" x="24" y="187" width="390" height="0.5"/>
+                                <color key="backgroundColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.59999999999999998" id="yRr-bx-Jeq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68y-lM-epl">
+                                <rect key="frame" x="24" y="211.5" width="326" height="14"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="12"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Text..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FX4-jh-N3I">
+                                <rect key="frame" x="24" y="141" width="366" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="XY9-lO-YwG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgd-Wi-ex6">
+                                <rect key="frame" x="24" y="429.5" width="390" height="0.5"/>
+                                <color key="backgroundColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.59999999999999998" id="tUe-0S-Tgp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C99-an-TYr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C99-an-TYr" firstAttribute="trailing" secondItem="sW0-oC-KCd" secondAttribute="trailing" constant="64" id="0ZE-To-chA"/>
+                            <constraint firstItem="C99-an-TYr" firstAttribute="bottom" secondItem="XCU-T1-0eu" secondAttribute="bottom" constant="29" id="8A4-rY-3z7"/>
+                            <constraint firstItem="4uI-eg-xJ7" firstAttribute="top" secondItem="68y-lM-epl" secondAttribute="bottom" constant="12" id="9zk-Uz-lhS"/>
+                            <constraint firstAttribute="trailing" secondItem="7xe-Rp-Xsd" secondAttribute="trailing" id="C0f-vF-cwM"/>
+                            <constraint firstItem="Tgd-Wi-ex6" firstAttribute="leading" secondItem="Ti8-BK-BJZ" secondAttribute="leading" constant="24" id="DGE-zK-P7p"/>
+                            <constraint firstItem="7xe-Rp-Xsd" firstAttribute="top" secondItem="FX4-jh-N3I" secondAttribute="bottom" constant="12" id="E8N-uN-ds9"/>
+                            <constraint firstItem="C99-an-TYr" firstAttribute="trailing" secondItem="XCU-T1-0eu" secondAttribute="trailing" constant="24" id="E99-hM-bOW"/>
+                            <constraint firstItem="7xe-Rp-Xsd" firstAttribute="leading" secondItem="Ti8-BK-BJZ" secondAttribute="leading" constant="24" id="G4l-tO-9nT"/>
+                            <constraint firstItem="sW0-oC-KCd" firstAttribute="leading" secondItem="C99-an-TYr" secondAttribute="leading" constant="24" id="Gve-x6-05q"/>
+                            <constraint firstAttribute="trailing" secondItem="Tgd-Wi-ex6" secondAttribute="trailing" id="HXy-ME-X2v"/>
+                            <constraint firstItem="XCU-T1-0eu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Tgd-Wi-ex6" secondAttribute="bottom" constant="30" id="Njx-iG-fAd"/>
+                            <constraint firstItem="FX4-jh-N3I" firstAttribute="leading" secondItem="C99-an-TYr" secondAttribute="leading" constant="24" id="SNd-c5-byG"/>
+                            <constraint firstItem="4uI-eg-xJ7" firstAttribute="leading" secondItem="C99-an-TYr" secondAttribute="leading" constant="21" id="Sgi-1x-GbQ"/>
+                            <constraint firstItem="sW0-oC-KCd" firstAttribute="top" secondItem="C99-an-TYr" secondAttribute="top" constant="24" id="a3w-3Z-SHy"/>
+                            <constraint firstItem="C99-an-TYr" firstAttribute="trailing" secondItem="4uI-eg-xJ7" secondAttribute="trailing" constant="24" id="aOB-4r-zCL"/>
+                            <constraint firstItem="68y-lM-epl" firstAttribute="top" secondItem="7xe-Rp-Xsd" secondAttribute="bottom" constant="24" id="bRB-PB-9aA"/>
+                            <constraint firstItem="Tgd-Wi-ex6" firstAttribute="top" secondItem="4uI-eg-xJ7" secondAttribute="bottom" constant="12" id="cXL-0q-TkG"/>
+                            <constraint firstItem="FX4-jh-N3I" firstAttribute="top" secondItem="sW0-oC-KCd" secondAttribute="bottom" constant="15" id="iZW-MK-GK5"/>
+                            <constraint firstItem="68y-lM-epl" firstAttribute="leading" secondItem="C99-an-TYr" secondAttribute="leading" constant="24" id="mX1-2Q-yfJ"/>
+                            <constraint firstItem="C99-an-TYr" firstAttribute="trailing" secondItem="68y-lM-epl" secondAttribute="trailing" constant="64" id="y8K-D8-P4F"/>
+                            <constraint firstItem="C99-an-TYr" firstAttribute="trailing" secondItem="FX4-jh-N3I" secondAttribute="trailing" constant="24" id="yhE-34-akb"/>
+                            <constraint firstItem="XCU-T1-0eu" firstAttribute="leading" secondItem="C99-an-TYr" secondAttribute="leading" constant="24" id="zPH-3J-TTK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VnX-R5-N61"/>
+                    <connections>
+                        <outlet property="txtEditContent" destination="4uI-eg-xJ7" id="fWi-zG-x8v"/>
+                        <outlet property="txtEditTitle" destination="FX4-jh-N3I" id="cdA-bZ-P6H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZB8-su-5Wr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
